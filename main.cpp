@@ -5,21 +5,22 @@ using namespace std;
 
 //declare functions here
 int factorial(int num);
-int counted(int& count); 
-
 int fact2;
-int& count = 4;
+
+//declare variables here
+
+int foo = 0;
+int& holder = foo;				//create reference variable for the factorial function
+
 
 int main()
 {
 	int counted(int& count);	//invoke
 	int factorial(int num);		//invoke the function
-	int fact = factorial(4);
+	int fact = factorial(5);
 	cout << fact << endl;
+	cout << "This is holder: " <<holder << endl;
 	
-
-	
-
 	return 0;
 }
 
@@ -28,18 +29,13 @@ int factorial(int num)
 {
 	if (num >= 0)
 	{
-		counted(count-1);
-		return num * (num - 1);
+		
 
 		
-		
-		
+		factorial(num - 1);
+		holder = +num;
+	
 	}
-	return num;
+	return (num-1)*num;
 }
 
-int counted(int& count)
-{
-
-	return count--;
-}
